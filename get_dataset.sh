@@ -23,5 +23,15 @@ UNCOMMITTED=${BASEDIR}/uncommitted
 # -p option creates parent directories where needed - but also doesn't fail if the dir already exists
 mkdir -p ${UNCOMMITTED}
 
+ACCESS_LOG_PATH=${UNCOMMITTED}/access.log.zip
+
 # download the dataset
-wget ${DATASET_URL} -O ${UNCOMMITTED}/access.log.zip
+/usr/bin/time --output ${UNCOMMITTED}/download_time.txt wget ${DATASET_URL} -O ${ACCESS_LOG_PATH}
+
+# decompress the dataset
+unzip -d ${UNCOMMITTED} ${ACCESS_LOG_PATH}
+
+# tidy up the random Mac folder in there
+rm -rf ${UNCOMMITTED}/__MACOSX
+
+echo "Dataset downloaded to ${UNCOMMITTED}/access_log"

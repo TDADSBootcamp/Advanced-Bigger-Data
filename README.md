@@ -8,7 +8,7 @@ This project uses `pipenv` to manage dependencies and virtualenvs. [Installation
 
 - Run `pipenv install --dev` to install the dependencies. (`--dev` installs the tooling described below)
 - Run `pipenv shell` to enter the virtualenv created by the previous command
-- Start (or restart) VSCode to ensure changes are picked up cleanly
+- In VSCode: Ctrl-Shift-P, Select Interpreter, select the pipenv interpreter
 - Run `get_dataset.sh` to download the access log dataset
 
 ### The Code
