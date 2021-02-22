@@ -1,4 +1,5 @@
 ## The Developer Academy
+
 ### Advanced - Bigger Data
 
 This project uses `pipenv` to manage dependencies and virtualenvs. [Installation instructions](https://pipenv.pypa.io/en/latest/install/#installing-pipenv)
@@ -8,6 +9,14 @@ This project uses `pipenv` to manage dependencies and virtualenvs. [Installation
 - Run `pipenv install --dev` to install the dependencies. (`--dev` installs the tooling described below)
 - Run `pipenv shell` to enter the virtualenv created by the previous command
 - Start (or restart) VSCode to ensure changes are picked up cleanly
+- Run `get_dataset.sh` to download the access log dataset
+
+### The Code
+
+- `python/access_log.py` utility for accessing and interpreting the access log
+- `python/access_log_test.py` tests for `access_log.py`
+- `python/load_large_file_*.py` different ways of loading a large CSV file
+- `python/memory_stress.py` utility to consume and hold a fixed amount of memory
 
 ### Project Setup
 
@@ -16,7 +25,3 @@ This project uses `pipenv` to manage dependencies and virtualenvs. [Installation
 - `.pylintrc` is the pylint configuration for Google's code style
 - `.style.yapf` is a code formatter configuration appropriate for the `.pylintrc`
 - `.vscode` is settings for VSCode to use `pylint`, `yapf` and `unittest`
-
-### The Code
-
-TBC... multiple methods for loading a ~3.5GB file for simple analysis, plus annotations for memory profiling (`mprof run python python/whatever.py`)
