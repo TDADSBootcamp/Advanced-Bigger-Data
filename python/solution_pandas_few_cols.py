@@ -18,4 +18,4 @@ def main(access_log_path):
 
 
 if __name__ == '__main__':
-  print(main('/home/paul/Downloads/access.log'))
+  print(main(access_log.ACCESS_LOG_PATH))

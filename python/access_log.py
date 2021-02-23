@@ -12,7 +12,7 @@ COLUMN_NAMES = [
 
 SEPARATOR = ' '
 
-ACCESS_LOG_PATH = os.environ.get('ACCESS_LOG_PATH')
+ACCESS_LOG_PATH = os.environ.get('ACCESS_LOG_PATH') or 'uncommitted/access.log'
 
 
 def get_top_10_clients_by_bytes(access_log_df):
