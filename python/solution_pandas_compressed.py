@@ -20,4 +20,4 @@ def main(access_log_path):
 
 
 if __name__ == '__main__':
-  print(main('/home/paul/Downloads/Access.log.zip'))
+  print(main(access_log.COMPRESSED_ACCESS_LOG_PATH))
