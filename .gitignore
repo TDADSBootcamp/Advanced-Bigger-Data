@@ -6,3 +6,6 @@ __pycache__
 
 # memory profiler outputs
 mprofile_*
+
+#Jupyter checkpoints
+.ipynb_checkpoints/
