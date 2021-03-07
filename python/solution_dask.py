@@ -9,7 +9,6 @@ import access_log
 
 import memory_profiler
 
-
 @memory_profiler.profile
 def main(access_log_path):
   hits = dd.read_csv(access_log_path,
@@ -17,8 +16,7 @@ def main(access_log_path):
                      header=None,
                      names=access_log.COLUMN_NAMES)
 
-  hits = hits.compute(
-      scheduler='processes')  # default is 'threads' - subject to GIL
+  #hits['bytes_billed'] = hits.apply(lambda row: row['bytes'] * billing[row['timestamp'].split(':')[1]], axis=1)
 
   by_ip_address = hits.groupby('client_ip')
 
@@ -26,7 +24,8 @@ def main(access_log_path):
 
   top_10_clients_by_bytes = client_total_bytes.nlargest(10)
 
-  return top_10_clients_by_bytes.head(10)
+  return top_10_clients_by_bytes.compute(
+      scheduler='processes')  # default is 'threads' - subject to GIL
 
 
 if __name__ == '__main__':

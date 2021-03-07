@@ -12,7 +12,7 @@ def main(access_log_path):
                        sep=access_log.SEPARATOR,
                        header=None,
                        names=access_log.COLUMN_NAMES,
-                       usecols=['client_ip', 'bytes'])
+                       usecols=['client_ip', 'timestamp', 'bytes'])
 
     return access_log.get_top_10_clients_by_bytes(hits)
 
