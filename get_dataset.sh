@@ -33,6 +33,6 @@ ACCESS_LOG_PATH=${UNCOMMITTED}/access.log.gz
 /usr/bin/time --output ${UNCOMMITTED}/download_time.txt wget ${DATASET_URL} -O ${ACCESS_LOG_PATH}
 
 # decompress the dataset, keeping the original file
-gunzip -k ${ACCESS_LOG_PATH}
+gunzip ${ACCESS_LOG_PATH}
 
 echo "Dataset downloaded to ${UNCOMMITTED}/access_log"
